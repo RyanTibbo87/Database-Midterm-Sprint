@@ -14,3 +14,12 @@ CREATE TABLE IF NOT EXISTS Customers (
   email VARCHAR(255) UNIQUE NOT NULL,
   phone VARCHAR(15)
 );
+-- Rental Table
+CREATE TABLE IF NOT EXISTS Rentals (
+  rental_id SERIAL PRIMARY KEY,
+  customer_id INT REFERENCES Customers(customer_id),
+  movie_id INT REFERENCES Movies(movie_id),
+  rental_date DATE NOT NULL,
+  return_date DATE,
+  due_date DATE NOT NULL
+);
