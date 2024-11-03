@@ -75,3 +75,10 @@ FROM Rentals r
 JOIN Customers c ON r.customer_id = c.customer_id
 JOIN Movies m ON r.movie_id = m.movie_id
 WHERE m.title = 'The Batman';
+
+-- For a specific movie director, find customer names, rental dates, and movie titles rented
+SELECT c.first_name, c.last_name, r.rental_date, m.title
+FROM Rentals r
+JOIN Customers c ON r.customer_id = c.customer_id
+JOIN Movies m ON r.movie_id = m.movie_id
+WHERE m.director = 'Christopher Nolan';
