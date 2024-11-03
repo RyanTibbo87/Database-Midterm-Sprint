@@ -39,5 +39,18 @@ INSERT INTO Customers (first_name, last_name, email, phone) VALUES
   ('John', 'Doe', 'john.doe@example.com', '123-456-7890'),
   ('Jane', 'Smith', 'jane.smith@example.com', '098-765-4321'),
   ('Alice', 'Johnson', 'alice.johnson@example.com', '555-123-4567'),
-  ('Matthew', 'English', 'matt.english@example.com', '111-222-3333'),
+  ('Matthew', 'English', 'matthew.english@example.com', '111-222-3333'),
   ('Ryan', 'Tibbo', 'ryan.tibbo@example.com', '444-555-6666');
+
+  -- Rentals
+INSERT INTO Rentals (customer_id, movie_id, rental_date, due_date) VALUES
+  (1, 1, '2024-11-01', '2024-11-08'), -- John Doe rented 'Everything Everywhere All at Once'
+  (2, 2, '2024-11-02', '2024-11-09'), -- Jane Smith rented 'Dune'
+  (3, 3, '2024-11-03', '2024-11-10'), -- Alice Johnson rented 'The Batman'
+  (4, 4, '2024-11-04', '2024-11-11'), -- Matthew English rented 'Top Gun: Maverick'
+  (5, 5, '2024-11-05', '2024-11-12'), -- Ryan Tibbo rented 'Oppenheimer'
+  (1, 3, '2024-11-06', '2024-11-13'), -- John Doe rented 'The Batman'
+  (2, 5, '2024-11-07', '2024-11-14'), -- Jane Smith rented 'Oppenheimer'
+  (3, 4, '2024-11-08', '2024-11-15'), -- Alice Johnson rented 'Top Gun: Maverick'
+  (4, 1, '2024-11-09', '2024-11-16'), -- Matthew English rented 'Everything Everywhere All at Once'
+  (5, 2, '2024-11-10', '2024-11-17'); -- Ryan Tibbo rented 'Dune'
