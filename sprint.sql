@@ -82,3 +82,9 @@ FROM Rentals r
 JOIN Customers c ON r.customer_id = c.customer_id
 JOIN Movies m ON r.movie_id = m.movie_id
 WHERE m.director = 'Christopher Nolan';
+
+-- List all currently rented out movies
+SELECT m.title, r.rental_date, r.due_date
+FROM Rentals r
+JOIN Movies m ON r.movie_id = m.movie_id
+WHERE r.return_date IS NULL OR r.return_date > CURRENT_DATE;
