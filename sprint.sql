@@ -61,3 +61,10 @@ FROM Rentals r
 JOIN Customers c ON r.customer_id = c.customer_id
 JOIN Movies m ON r.movie_id = m.movie_id
 WHERE c.email = 'john.doe@example.com';
+
+-- Given a movie title, list all customers who have rented the movie
+SELECT c.first_name, c.last_name, c.email, r.rental_date
+FROM Rentals r
+JOIN Customers c ON r.customer_id = c.customer_id
+JOIN Movies m ON r.movie_id = m.movie_id
+WHERE m.title = 'Dune';
