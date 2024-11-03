@@ -68,3 +68,10 @@ FROM Rentals r
 JOIN Customers c ON r.customer_id = c.customer_id
 JOIN Movies m ON r.movie_id = m.movie_id
 WHERE m.title = 'Dune';
+
+-- Get the rental history for a specific movie title
+SELECT c.first_name, c.last_name, r.rental_date, r.return_date
+FROM Rentals r
+JOIN Customers c ON r.customer_id = c.customer_id
+JOIN Movies m ON r.movie_id = m.movie_id
+WHERE m.title = 'The Batman';
