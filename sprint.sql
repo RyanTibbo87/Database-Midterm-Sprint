@@ -34,3 +34,10 @@ INSERT INTO Movies (title, year, genre, director) VALUES
   ('Top Gun: Maverick', 2022, 'Action/Drama', 'Joseph Kosinski'),
   ('Oppenheimer', 2023, 'Biography/Drama/History', 'Christopher Nolan');
 
+-- Customers
+INSERT INTO Customers (first_name, last_name, email, phone) VALUES
+  ('John', 'Doe', 'john.doe@example.com', '123-456-7890'),
+  ('Jane', 'Smith', 'jane.smith@example.com', '098-765-4321'),
+  ('Alice', 'Johnson', 'alice.johnson@example.com', '555-123-4567'),
+  ('Matthew', 'English', 'matt.english@example.com', '111-222-3333'),
+  ('Ryan', 'Tibbo', 'ryan.tibbo@example.com', '444-555-6666');
