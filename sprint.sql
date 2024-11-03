@@ -23,3 +23,14 @@ CREATE TABLE IF NOT EXISTS Rentals (
   return_date DATE,
   due_date DATE NOT NULL
 );
+
+-- Sample Data
+
+-- Movies
+INSERT INTO Movies (title, year, genre, director) VALUES
+  ('Everything Everywhere All at Once', 2022, 'Adventure/Comedy/Drama', 'Daniel Kwan, Daniel Scheinert'),
+  ('Dune', 2021, 'Sci-Fi/Adventure', 'Denis Villeneuve'),
+  ('The Batman', 2022, 'Action/Crime/Drama', 'Matt Reeves'),
+  ('Top Gun: Maverick', 2022, 'Action/Drama', 'Joseph Kosinski'),
+  ('Oppenheimer', 2023, 'Biography/Drama/History', 'Christopher Nolan');
+
