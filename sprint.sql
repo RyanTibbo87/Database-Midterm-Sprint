@@ -54,3 +54,10 @@ INSERT INTO Rentals (customer_id, movie_id, rental_date, due_date) VALUES
   (3, 4, '2024-11-08', '2024-11-15'), -- Alice Johnson rented 'Top Gun: Maverick'
   (4, 1, '2024-11-09', '2024-11-16'), -- Matthew English rented 'Everything Everywhere All at Once'
   (5, 2, '2024-11-10', '2024-11-17'); -- Ryan Tibbo rented 'Dune'
+
+-- Find all movies rented by a specific customer
+SELECT m.title, r.rental_date, r.due_date
+FROM Rentals r
+JOIN Customers c ON r.customer_id = c.customer_id
+JOIN Movies m ON r.movie_id = m.movie_id
+WHERE c.email = 'john.doe@example.com';
