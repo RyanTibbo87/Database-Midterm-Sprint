@@ -6,6 +6,12 @@ CREATE TABLE IF NOT EXISTS Movies (
   genre VARCHAR(50) NOT NULL,
   director VARCHAR(255) NOT NULL
 );
+-- The Movies table is in 3NF because:
+-- 1. It has no repeating groups, meeting 1NF.
+-- 2. All non-primary key columns (title, year, genre, director) depend on the primary key (movie_id), meeting 2NF.
+-- 3. No non-primary key column depends on another non-primary key column (e.g., genre doesn't depend on title or director),
+--    ensuring no transitive dependencies, thus meeting 3NF.
+
 -- Customer Table
 CREATE TABLE IF NOT EXISTS Customers (
   customer_id SERIAL PRIMARY KEY,
@@ -14,6 +20,12 @@ CREATE TABLE IF NOT EXISTS Customers (
   email VARCHAR(255) UNIQUE NOT NULL,
   phone VARCHAR(15)
 );
+-- The Customers table is in 3NF because:
+-- 1. It has no repeating groups, meeting 1NF.
+-- 2. All non-primary key columns (first_name, last_name, email, phone) depend on the primary key (customer_id), meeting 2NF.
+-- 3. No non-primary key column is dependent on another non-primary key column (e.g., email is not dependent on phone),
+--    ensuring no transitive dependencies, thus meeting 3NF.
+
 -- Rental Table
 CREATE TABLE IF NOT EXISTS Rentals (
   rental_id SERIAL PRIMARY KEY,
@@ -23,6 +35,11 @@ CREATE TABLE IF NOT EXISTS Rentals (
   return_date DATE,
   due_date DATE NOT NULL
 );
+-- The Rentals table is in 3NF because:
+-- 1. It has no repeating groups, meeting 1NF.
+-- 2. All non-primary key columns (customer_id, movie_id, rental_date, return_date, due_date) depend on the primary key (rental_id), meeting 2NF.
+-- 3. There are no transitive dependencies; no non-primary key column depends on another non-primary key column.
+--    For instance, customer_id and movie_id are foreign keys but do not create transitive dependencies within this table.
 
 -- Sample Data
 
